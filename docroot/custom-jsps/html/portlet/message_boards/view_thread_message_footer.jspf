@@ -1,0 +1,141 @@
+<%--
+/**
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *        http://www.apache.org/licenses/LICENSE-2.0
+ *        
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ --%>
+<%
+	boolean enableModeratorHint = themeDisplay.isSignedIn();
+%>
+
+<tr>
+	<td>
+		<table class="lfr-table">
+			<tr>
+				<td><a rel="license"
+					href="http://creativecommons.org/licenses/by-nc-nd/3.0/de/"> <img
+						alt="Creative Commons Lizenzvertrag" style="border-width: 0"
+						src="<%= themeDisplay.getPathThemeImages() %>/custom/message-boards/CC_BY_NC_ND_80x15.png" />
+				</a>
+				<td>Dieser <span xmlns:dct="http://purl.org/dc/terms/"
+					href="http://purl.org/dc/dcmitype/Text" rel="dct:type">
+						<%= LanguageUtil.get(pageContext, "message") %></span> 
+						<%= LanguageUtil.get(pageContext, "message-license-stmt") %><a rel="license"
+					href="http://creativecommons.org/licenses/by-nc-nd/3.0/de/">
+						<%= LanguageUtil.get(pageContext, "message-license-by-nc-nd") %></a> 
+						<%= LanguageUtil.get(pageContext, "message-license-lic") %>.</td>
+			</tr>
+		</table></td>
+</tr>
+
+<c:if test="<%= editable %>">
+	<tr>
+		<td class="thread-bottom">
+			<c:if test="<%= enableRatings %>">
+				<liferay-ui:ratings className="<%= MBMessage.class.getName() %>"
+					classPK="<%= message.getMessageId() %>" type="thumbs" />
+			</c:if> 
+			
+			<c:if test="<%= enableFlags %>">
+				<liferay-ui:flags className="<%= MBMessage.class.getName() %>"
+					classPK="<%= message.getMessageId() %>"
+					contentTitle="<%= message.getSubject() %>"
+					reportedUserId="<%= message.getUserId() %>" />
+			</c:if> 
+			
+			<c:if test="<%= enableModeratorHint %>">
+				<% 	String hintRef = themeDisplay.getPathFriendlyURLPublic() +
+						themeDisplay.getScopeGroup().getFriendlyURL() + "/ergebnis-melden"; 
+			 		String hintIcon = themeDisplay.getPathThemeImages() + "/custom/message-boards/gold_coin.png";
+				%>
+				<div class="taglib-flags" title="Ergebnis">
+				<span class="sylx_">
+				<a class="taglib-icon" href="<%= hintRef %>" target="_blank">
+					<img alt="wertvolles" class="icon" src="<%= hintIcon %>"> 
+					<span class="taglib-text"><%= LanguageUtil.get(pageContext, "message-moderator-hint-result") %></span>
+				</a>
+				</span></div>
+			</c:if>
+
+			<ul class="edit-controls lfr-component">
+				<li>
+					<%
+						String topHREF = "#" + renderResponse.getNamespace()
+									+ "message_0";
+					%> <liferay-ui:icon image="top" label="<%= true %>"
+						url="<%= topHREF %>" />
+				</li>
+
+				<c:if
+					test="<%= MBMessagePermission.contains(permissionChecker, message, ActionKeys.UPDATE) && !thread.isLocked() %>">
+					<li><portlet:renderURL var="editURL">
+							<portlet:param name="struts_action"
+								value="/message_boards/edit_message" />
+							<portlet:param name="redirect" value="<%= currentURL %>" />
+							<portlet:param name="messageId"
+								value="<%= String.valueOf(message.getMessageId()) %>" />
+						</portlet:renderURL> <liferay-ui:icon image="edit" label="<%= true %>"
+							url="<%= editURL %>" />
+					</li>
+				</c:if>
+
+				<c:if
+					test="<%= MBMessagePermission.contains(permissionChecker, message, ActionKeys.PERMISSIONS) && !thread.isLocked() %>">
+					<li><liferay-security:permissionsURL
+							modelResource="<%= MBMessage.class.getName() %>"
+							modelResourceDescription="<%= HtmlUtil.escape(message.getSubject()) %>"
+							resourcePrimKey="<%= String.valueOf(message.getMessageId()) %>"
+							var="permissionsURL" /> <liferay-ui:icon image="permissions"
+							label="<%= true %>" url="<%= permissionsURL %>" />
+					</li>
+				</c:if>
+
+				<c:if
+					test="<%= (message.getParentMessageId() != MBMessageConstants.DEFAULT_PARENT_MESSAGE_ID) && MBCategoryPermission.contains(permissionChecker, scopeGroupId, category.getCategoryId(), ActionKeys.MOVE_THREAD) %>">
+					<li><portlet:renderURL var="splitThreadURL">
+							<portlet:param name="struts_action"
+								value="/message_boards/split_thread" />
+							<portlet:param name="redirect" value="<%= currentURL %>" />
+							<portlet:param name="messageId"
+								value="<%= String.valueOf(message.getMessageId()) %>" />
+						</portlet:renderURL> <liferay-ui:icon image="unlink" label="<%= true %>"
+							message="split-thread" url="<%= splitThreadURL %>" />
+					</li>
+				</c:if>
+
+				<c:if
+					test="<%= MBMessagePermission.contains(permissionChecker, message, ActionKeys.DELETE) && !thread.isLocked() %>">
+					<li>
+						<%
+							PortletURL categoryURL = renderResponse.createRenderURL();
+
+									categoryURL.setParameter("struts_action",
+											"/message_boards/view");
+									categoryURL.setParameter("mbCategoryId",
+											String.valueOf(message.getCategoryId()));
+						%> <portlet:actionURL var="deleteURL">
+							<portlet:param name="struts_action"
+								value="/message_boards/edit_message" />
+							<portlet:param name="<%= Constants.CMD %>"
+								value="<%= Constants.DELETE %>" />
+							<portlet:param name="redirect"
+								value="<%= categoryURL.toString() %>" />
+							<portlet:param name="messageId"
+								value="<%= String.valueOf(message.getMessageId()) %>" />
+						</portlet:actionURL> <liferay-ui:icon-delete label="<%= true %>"
+							url="<%= deleteURL %>" />
+					</li>
+				</c:if>
+			</ul>
+		</td>
+	</tr>
+</c:if>

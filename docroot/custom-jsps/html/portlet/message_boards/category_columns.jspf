@@ -1,0 +1,104 @@
+<%--
+/**
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *        http://www.apache.org/licenses/LICENSE-2.0
+ *        
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ --%>
+
+<liferay-ui:search-container-column-text
+	buffer="buffer"
+	name="category"
+>
+
+	<%
+	buffer.append("<a href=\"");
+	buffer.append(rowURL);
+	buffer.append("\">");
+	buffer.append("<strong>");
+	buffer.append(curCategory.getName());
+	buffer.append("</strong>");
+
+	if (Validator.isNotNull(curCategory.getDescription())) {
+		buffer.append("<br />");
+		buffer.append(curCategory.getDescription());
+	}
+
+	buffer.append("</a>");
+
+	List subcategories = MBCategoryServiceUtil.getCategories(scopeGroupId, curCategory.getCategoryId(), 0, 5);
+
+	int subcategoriesCount = MBCategoryServiceUtil.getCategoriesCount(scopeGroupId, curCategory.getCategoryId());
+
+	if (subcategoriesCount > 0) {
+		buffer.append("<br /><span class=\"subcategories\">");
+		buffer.append(LanguageUtil.get(pageContext, "subcategories"));
+		buffer.append("</span>: ");
+
+		for (int j = 0; j < subcategories.size(); j++) {
+			MBCategory subcategory = (MBCategory)subcategories.get(j);
+
+			rowURL.setParameter("mbCategoryId", String.valueOf(subcategory.getCategoryId()));
+
+			buffer.append("<a href=\"");
+			buffer.append(rowURL);
+			buffer.append("\">");
+			buffer.append(subcategory.getName());
+			buffer.append("</a>");
+
+			if ((j + 1) < subcategories.size()) {
+				buffer.append(", ");
+			}
+		}
+
+		if (subcategoriesCount > subcategories.size()) {
+			rowURL.setParameter("mbCategoryId", String.valueOf(curCategory.getCategoryId()));
+
+			buffer.append(", <a href=\"");
+			buffer.append(rowURL);
+			buffer.append("\">");
+			buffer.append(LanguageUtil.get(pageContext, "more"));
+			buffer.append(" &raquo;");
+			buffer.append("</a>");
+		}
+
+		rowURL.setParameter("mbCategoryId", String.valueOf(curCategory.getCategoryId()));
+	}
+	%>
+
+</liferay-ui:search-container-column-text>
+
+<c:if test="<%= bShowCatCountInCatList %>">
+	<liferay-ui:search-container-column-text
+		href="<%= rowURL %>"
+		name="categories"
+		value="<%= String.valueOf(categoryDisplay.getSubcategoriesCount(curCategory)) %>"
+	/>
+</c:if>
+
+<c:if test="<%= bShowThreadCountInCatList %>">
+	<liferay-ui:search-container-column-text
+		href="<%= rowURL %>"
+		name="threads"
+		value="<%= String.valueOf(categoryDisplay.getSubcategoriesThreadsCount(curCategory)) %>"
+	/>
+</c:if>
+
+<liferay-ui:search-container-column-text
+	href="<%= rowURL %>"
+	name="posts"
+	value="<%= String.valueOf(categoryDisplay.getSubcategoriesMessagesCount(curCategory)) %>"
+/>
+
+<liferay-ui:search-container-column-jsp
+	align="right"
+	path="/html/portlet/message_boards/category_action.jsp"
+/>

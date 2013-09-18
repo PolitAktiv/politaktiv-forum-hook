@@ -1,0 +1,30 @@
+ReleaseNotes:
+
+ACHTUNG: Projekt enthält Fehler
+
+0.4 - 13.06.2013
+----------------
+* Teilprojekt -> Themenbereich.
+
+
+0.3 - 23.09.2011
+----------------
+* Mail an Moderator
+* Strings internationalisiert
+* RSS verschlankt
+
+0.2 - 16.09.2011
+----------------
+* Workaround für die zwei fehlenden Felder eingebaut
+* Zitate hübsch gemacht
+* Größe des Eingabefelds verringert
+
+0.1 - 15.08.2011
+----------------
+* bugfix: "Das ist ein Test" entfernt
+* bugfix: portal.properties hat keinen Effekt und erzeugt Exception, daher entfernt
+
+0.1 - 29.07.2011
+----------------
+* politaktiv-jspoverride-hook refaktored
+* CC Lizenz statisch eingebaut

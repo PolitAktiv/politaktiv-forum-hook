@@ -1,0 +1,51 @@
+<%--
+/**
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *        http://www.apache.org/licenses/LICENSE-2.0
+ *        
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ --%>
+
+<%
+String body_value = GetterUtil.getString(body);
+
+if (null == body_value || body_value.length() < 1) {
+	body_value = "\n\rMein Argument:\n\r\n\r\n\r\n\rMeine Begründung dafür:";
+}
+%>
+
+
+<aui:input cssClass="lfr-textarea message-edit" 
+  label="" name="textArea" type="textarea" 
+  value="<%= body_value %>" />
+
+<aui:script>
+	var <portlet:namespace />bbCode = null;
+
+	function <portlet:namespace />getHTML() {
+		return <portlet:namespace />bbCode.getHTML();
+	}
+</aui:script>
+
+<aui:script use="liferay-bbcode-editor">
+	<portlet:namespace />bbCode = new Liferay.Editor.bbCode(
+		{
+			textarea: '#<portlet:namespace />textArea'
+		}
+	);
+
+	<c:if test="<%= quote && Validator.isNull(body) && (curParentMessage != null) %>">
+		var respondee = "<%= UnicodeFormatter.toString(parentAuthor) %>";
+		var quote = "<%= UnicodeFormatter.toString(curParentMessage.getBody(false)) %>";
+
+		<portlet:namespace />bbCode.insertTag("quote", respondee, quote);
+	</c:if>
+</aui:script>
