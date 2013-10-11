@@ -17,6 +17,8 @@
 <%@ include file="/html/portlet/message_boards/init.jsp" %>
 
 <%
+String redirect = ParamUtil.getString(request, "redirect");
+
 MBMessageDisplay messageDisplay = (MBMessageDisplay)request.getAttribute(WebKeys.MESSAGE_BOARDS_MESSAGE);
 
 MBMessage message = messageDisplay.getMessage();
@@ -28,23 +30,35 @@ MBThread thread = messageDisplay.getThread();
 MBThread previousThread = messageDisplay.getPreviousThread();
 MBThread nextThread = messageDisplay.getNextThread();
 
-MBMessageFlag messageFlag = MBMessageFlagLocalServiceUtil.getReadFlag(themeDisplay.getUserId(), thread);
-
 String threadView = messageDisplay.getThreadView();
+
+MBThreadFlag threadFlag = MBThreadFlagLocalServiceUtil.getThreadFlag(themeDisplay.getUserId(), thread);
 %>
 
-<portlet:renderURL var="backURL">
-	<portlet:param name="struts_action" value="/message_boards/view" />
-	<portlet:param name="mbCategoryId" value="<%= (category != null) ? String.valueOf(category.getCategoryId()) : String.valueOf(MBCategoryConstants.DEFAULT_PARENT_CATEGORY_ID) %>" />
-</portlet:renderURL>
+<c:choose>
+	<c:when test="<%= Validator.isNull(redirect) %>">
+		<portlet:renderURL var="backURL">
+			<portlet:param name="struts_action" value="/message_boards/view" />
+			<portlet:param name="mbCategoryId" value="<%= (category != null) ? String.valueOf(category.getCategoryId()) : String.valueOf(MBCategoryConstants.DEFAULT_PARENT_CATEGORY_ID) %>" />
+		</portlet:renderURL>
 
-<liferay-ui:header
-	backLabel='<%= "&laquo; " + LanguageUtil.format(pageContext, "back-to-x", (category != null) ? HtmlUtil.escape(category.getName()) : "message-boards-home") %>'
-	backURL="<%= backURL.toString() %>"
-	title="<%= message.getSubject() %>"
-/>
+		<liferay-ui:header
+			backLabel='<%= (category != null) ? category.getName() : "message-boards-home" %>'
+			backURL="<%= backURL.toString() %>"
+			localizeTitle="<%= false %>"
+			title="<%= message.getSubject() %>"
+		/>
+	</c:when>
+	<c:otherwise>
+		<liferay-ui:header
+			backURL="<%= redirect %>"
+			localizeTitle="<%= false %>"
+			title="<%= message.getSubject() %>"
+		/>
+	</c:otherwise>
+</c:choose>
 
-<table cellpadding="0" cellspacing="0" width="100%">
+<table cellpadding="0" cellspacing="0" class="thread-view-controls" width="100%">
 <tr>
 	<td class="stretch"></td>
 
@@ -285,9 +299,9 @@ String threadView = messageDisplay.getThreadView();
 			request.setAttribute(WebKeys.MESSAGE_BOARDS_TREE_WALKER, treeWalker);
 			request.setAttribute(WebKeys.MESSAGE_BOARDS_TREE_WALKER_SEL_MESSAGE, message);
 			request.setAttribute(WebKeys.MESSAGE_BOARDS_TREE_WALKER_CUR_MESSAGE, treeWalker.getRoot());
-			request.setAttribute(WebKeys.MESSAGE_BOARDS_TREE_WALKER_MESSAGE_FLAG, messageFlag);
 			request.setAttribute(WebKeys.MESSAGE_BOARDS_TREE_WALKER_CATEGORY, category);
 			request.setAttribute(WebKeys.MESSAGE_BOARDS_TREE_WALKER_THREAD, thread);
+			request.setAttribute(WebKeys.MESSAGE_BOARDS_TREE_WALKER_THREAD_FLAG, threadFlag);
 			request.setAttribute(WebKeys.MESSAGE_BOARDS_TREE_WALKER_LAST_NODE, Boolean.valueOf(false));
 			request.setAttribute(WebKeys.MESSAGE_BOARDS_TREE_WALKER_DEPTH, new Integer(0));
 			%>
@@ -314,7 +328,8 @@ String threadView = messageDisplay.getThreadView();
 			<liferay-util:include page="/html/portlet/message_boards/view_thread_tree.jsp" />
 		</c:when>
 		<c:otherwise>
-			<%@ include file="/html/portlet/message_boards/view_thread_flat.jspf" %>
+			<% // <%@ include file="/html/portlet/message_boards/view_thread_flat.jspf" %>
+			<liferay-util:include page="/html/portlet/message_boards/view_thread_flat.jspf" />
 		</c:otherwise>
 	</c:choose>
 </div>

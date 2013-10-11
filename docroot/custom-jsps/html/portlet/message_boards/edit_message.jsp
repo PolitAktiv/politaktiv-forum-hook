@@ -54,6 +54,10 @@ if (threadId > 0) {
 }
 
 String body = BeanParamUtil.getString(message, request, "body");
+if (null == body || body.length() < 1) {
+	body = "\n\rMein Argument:\n\r\n\r\n\r\n\rMeine Begründung dafür:";
+}
+
 boolean attachments = BeanParamUtil.getBoolean(message, request, "attachments");
 boolean preview = ParamUtil.getBoolean(request, "preview");
 boolean quote = ParamUtil.getBoolean(request, "quote");
@@ -136,8 +140,8 @@ if (Validator.isNull(redirect)) {
 	request.setAttribute("edit_message.jsp-assetTagNames", ParamUtil.getString(request, "assetTagNames"));
 	%>
 
-	<%@ include file="/html/portlet/message_boards/view_thread_message.jspf" %>
-
+	<% // <%@ include file="/html/portlet/message_boards/view_thread_message.jspf" %>
+	<liferay-util:include page="/html/portlet/message_boards/view_thread_message.jspf" />
 	<%
 	request.removeAttribute("edit_message.jsp-assetTagNames");
 
@@ -203,8 +207,15 @@ if (Validator.isNull(redirect)) {
 		<aui:input name="subject" value="<%= subject %>" />
 
 		<aui:field-wrapper label="body">
-			<%@ include file="/html/portlet/message_boards/bbcode_editor.jspf" %>
-
+			<c:choose>
+				<c:when test='<%= ((messageId != 0) && message.isFormatBBCode()) || ((messageId == 0) && messageFormat.equals("bbcode")) %>'>
+					<% //<%@ include file="/html/portlet/message_boards/bbcode_editor.jspf" %>
+					<liferay-util:include page="/html/portlet/message_boards/bbcode_editor.jspf" />
+				</c:when>
+				<c:otherwise>
+					<liferay-util:include page="/html/portlet/message_boards/html_editor.jspf" />
+				</c:otherwise>
+			</c:choose>
 			<aui:input name="body" type="hidden" prefix="test"/>
 		</aui:field-wrapper>
 
@@ -296,6 +307,10 @@ if (Validator.isNull(redirect)) {
 			<aui:input helpMessage="message-boards-message-anonymous-help" inlineLabel="left" name="anonymous" type="checkbox" />
 		</c:if>
 
+		<c:if test="<%= (message == null) && themeDisplay.isSignedIn() && !SubscriptionLocalServiceUtil.isSubscribed(themeDisplay.getCompanyId(), user.getUserId(), MBThread.class.getName(), threadId) && !SubscriptionLocalServiceUtil.isSubscribed(themeDisplay.getCompanyId(), user.getUserId(), MBCategory.class.getName(), categoryId) %>">
+			<aui:input helpMessage="message-boards-message-subscribe-me-help" inlineLabel="left" label="subscribe-me" name="subscribe" type="checkbox" value="<%= subscribeByDefault %>" />
+		</c:if>
+
 		<c:if test="<%= (priorities.length > 0) && MBCategoryPermission.contains(permissionChecker, scopeGroupId, categoryId, ActionKeys.UPDATE_THREAD_PRIORITY) %>">
 
 			<%
@@ -354,6 +369,21 @@ if (Validator.isNull(redirect)) {
 				</c:otherwise>
 			</c:choose>
 		</c:if>
+		
+		<c:if test="<%= (curParentMessage == null) || childrenMessagesTaggable %>">
+			<liferay-ui:panel defaultState="closed" extended="<%= false %>" id="mbMessageCategorizationPanel" persistState="<%= true %>" title="categorization">
+				<aui:input name="tags" type="assetTags" />
+			</liferay-ui:panel>
+		</c:if>
+
+		<liferay-ui:panel defaultState="closed" extended="<%= false %>" id="mbMessageAssetLinksPanel" persistState="<%= true %>" title="related-assets">
+			<aui:fieldset>
+				<liferay-ui:input-asset-links
+					className="<%= MBMessage.class.getName() %>"
+					classPK="<%= (message != null) ? message.getMessageId() : 0 %>"
+				/>
+			</aui:fieldset>
+		</liferay-ui:panel>
 	</aui:fieldset>
 
 	<c:if test="<%= (message == null) && PropsValues.CAPTCHA_CHECK_PORTLET_MESSAGE_BOARDS_EDIT_MESSAGE %>">
@@ -400,28 +430,19 @@ if (Validator.isNull(redirect)) {
 			</div>
 		</c:if>
 
+		<c:if test="<%= MBCategoryPermission.contains(permissionChecker, scopeGroupId, categoryId, ActionKeys.ADD_FILE) %>">
+			<aui:button onClick='<%= renderResponse.getNamespace() + "manageAttachments(" + !attachments + ");" %>' value='<%= ((attachments) ? "remove" : "attach") + "-files" %>' />
+		</c:if>
+
 		<c:if test="<%=themeDisplay.isSignedIn() %>">
 			<aui:button name="saveButton" onClick='<%= renderResponse.getNamespace() + "saveMessage(true);" %>' value="<%= saveButtonLabel %>" />
 		</c:if>
-		
+
+		<aui:button onClick='<%= renderResponse.getNamespace() + "previewMessage();" %>' value="preview" />
+
 		<aui:button disabled="<%= pending %>" name="publishButton" type="submit" value="<%= publishButtonLabel %>" />
 
-		<c:if test="<%= MBCategoryPermission.contains(permissionChecker, scopeGroupId, categoryId, ActionKeys.ADD_FILE) %>">
-
-			<%
-			String taglibOnClick = "document." + renderResponse.getNamespace() + "fm." + renderResponse.getNamespace() + "body.value = " + renderResponse.getNamespace() + "getHTML(); document." + renderResponse.getNamespace() + "fm." + renderResponse.getNamespace() + "attachments.value = '" + !attachments + "'; submitForm(document." + renderResponse.getNamespace() + "fm);";
-			%>
-
-			<aui:button onClick="<%= taglibOnClick %>" value='<%= ((attachments) ? "remove" : "attach") + "-files" %>' />
-		</c:if>
-
-		<%
-		String taglibOnClick = "document." + renderResponse.getNamespace() + "fm." + renderResponse.getNamespace() + "body.value = " + renderResponse.getNamespace() + "getHTML(); document." + renderResponse.getNamespace() + "fm." + renderResponse.getNamespace() + "preview.value = 'true'; " + renderResponse.getNamespace() + "saveMessage(true);";
-		%>
-
-		<aui:button onClick="<%= taglibOnClick %>" value="preview" />
-
-		<aui:button onClick="<%= redirect %>" type="cancel" />
+		<aui:button href="<%= redirect %>" type="cancel" />
 	</aui:button-row>
 
 	<c:if test="<%= curParentMessage != null %>">
@@ -441,7 +462,7 @@ if (Validator.isNull(redirect)) {
 		String classHoverName = "portlet-section-body-hover results-row hover";
 		%>
 
-		<%@ include file="/html/portlet/message_boards/view_thread_message.jspf" %>
+		<liferay-util:include page="/html/portlet/message_boards/view_thread_message.jspf" />
 	</c:if>
 </aui:form>
 
@@ -455,11 +476,26 @@ if (Validator.isNull(redirect)) {
 		return content;
 	}
 
+	function <portlet:namespace />manageAttachments(removeAttachments) {
+		document.<portlet:namespace />fm.<portlet:namespace />body.value = <portlet:namespace />getHTML();
+		document.<portlet:namespace />fm.<portlet:namespace />attachments.value = removeAttachments;
+
+		submitForm(document.<portlet:namespace />fm);
+	}
+
+	function <portlet:namespace />previewMessage() {
+		document.<portlet:namespace />fm.<portlet:namespace />body.value = <portlet:namespace />getHTML();
+		document.<portlet:namespace />fm.<portlet:namespace />preview.value = 'true';
+
+		<portlet:namespace />saveMessage(true);
+	}
+
 	function <portlet:namespace />saveMessage(draft) {
 		document.<portlet:namespace />fm.<portlet:namespace /><%= Constants.CMD %>.value = "<%= (message == null) ? Constants.ADD : Constants.UPDATE %>";
 		document.<portlet:namespace />fm.<portlet:namespace />body.value = <portlet:namespace />getHTML();
 
 		if (!draft) {
+			document.<portlet:namespace />fm.<portlet:namespace />preview.value = <%= preview %>;
 			document.<portlet:namespace />fm.<portlet:namespace />workflowAction.value = <%= WorkflowConstants.ACTION_PUBLISH %>;
 		}
 

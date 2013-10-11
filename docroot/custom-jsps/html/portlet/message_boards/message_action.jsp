@@ -63,6 +63,7 @@ MBThread thread = message.getThread();
 
 	<c:if test="<%= portletName.equals(PortletKeys.MESSAGE_BOARDS) %>">
 		<c:if test="<%= MBMessagePermission.contains(permissionChecker, message, ActionKeys.VIEW) %>">
+
 			<c:if test="<%= rssThreadActionEnabled %>">
 				<%
 				rssURL.setParameter("p_l_id", String.valueOf(plid));
@@ -99,7 +100,7 @@ MBThread thread = message.getThread();
 						<portlet:param name="redirect" value="<%= currentURL %>" />
 						<portlet:param name="messageId" value="<%= String.valueOf(message.getMessageId()) %>" />
 					</portlet:actionURL>
-	
+
 					<liferay-ui:icon
 						image="subscribe"
 						url="<%= subscribeURL %>"

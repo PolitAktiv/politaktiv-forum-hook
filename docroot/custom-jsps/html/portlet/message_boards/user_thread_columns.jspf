@@ -56,7 +56,8 @@
 	value="<%= String.valueOf(thread.getViewCount()) %>"
 /> --%>
 
-<%@ include file="/html/portlet/message_boards/user_thread_columns_last_post.jspf" %>
+<% // <%@ include file="/html/portlet/message_boards/user_thread_columns_last_post.jspf" %>
+<liferay-util:include page="/html/portlet/message_boards/user_thread_columns_last_post.jspf" />
 
 <c:if test='<%= topLink.equals("my-posts") %>'>
 	<liferay-ui:search-container-column-text
@@ -66,4 +67,6 @@
 	/>
 </c:if>
 
-<%@ include file="/html/portlet/message_boards/user_thread_columns_action.jspf" %>
+
+<% //<%@ include file="/html/portlet/message_boards/user_thread_columns_action.jspf" %>
+<liferay-util:include page="/html/portlet/message_boards/user_thread_columns_action.jspf" />

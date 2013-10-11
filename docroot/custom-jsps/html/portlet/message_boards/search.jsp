@@ -23,22 +23,16 @@ long breadcrumbsCategoryId = ParamUtil.getLong(request, "breadcrumbsCategoryId")
 long breadcrumbsMessageId = ParamUtil.getLong(request, "breadcrumbsMessageId");
 
 long searchCategoryId = ParamUtil.getLong(request, "searchCategoryId");
-long searchCategoryIds = ParamUtil.getLong(request, "searchCategoryIds");
 
 long[] categoryIdsArray = null;
 
-if (searchCategoryId > 0) {
-	categoryIdsArray = new long[] {searchCategoryId};
-}
-else {
-	List categoryIds = new ArrayList();
+List categoryIds = new ArrayList();
 
-	categoryIds.add(new Long(searchCategoryIds));
+categoryIds.add(new Long(searchCategoryId));
 
-	MBCategoryServiceUtil.getSubcategoryIds(categoryIds, scopeGroupId, searchCategoryIds);
+MBCategoryServiceUtil.getSubcategoryIds(categoryIds, scopeGroupId, searchCategoryId);
 
-	categoryIdsArray = StringUtil.split(StringUtil.merge(categoryIds), 0L);
-}
+categoryIdsArray = StringUtil.split(StringUtil.merge(categoryIds), 0L);
 
 long threadId = ParamUtil.getLong(request, "threadId");
 String keywords = ParamUtil.getString(request, "keywords");
@@ -54,7 +48,6 @@ String keywords = ParamUtil.getString(request, "keywords");
 	<aui:input name="breadcrumbsCategoryId" type="hidden" value="<%= breadcrumbsCategoryId %>" />
 	<aui:input name="breadcrumbsMessageId" type="hidden" value="<%= breadcrumbsMessageId %>" />
 	<aui:input name="searchCategoryId" type="hidden" value="<%= searchCategoryId %>" />
-	<aui:input name="searchCategoryIds" type="hidden" value="<%= searchCategoryIds %>" />
 	<aui:input name="threadId" type="hidden" value="<%= threadId %>" />
 
 	<liferay-ui:header
@@ -70,7 +63,6 @@ String keywords = ParamUtil.getString(request, "keywords");
 	portletURL.setParameter("breadcrumbsCategoryId", String.valueOf(breadcrumbsCategoryId));
 	portletURL.setParameter("breadcrumbsMessageId", String.valueOf(breadcrumbsMessageId));
 	portletURL.setParameter("searchCategoryId", String.valueOf(searchCategoryId));
-	portletURL.setParameter("searchCategoryIds", String.valueOf(searchCategoryIds));
 	portletURL.setParameter("threadId", String.valueOf(threadId));
 	portletURL.setParameter("keywords", keywords);
 
@@ -81,10 +73,8 @@ String keywords = ParamUtil.getString(request, "keywords");
 	headerNames.add("category");
 	headerNames.add("message");
 	headerNames.add("thread-posts");
-
 	if(bShowThreadViewsCol)
 		headerNames.add("thread-views");
-	headerNames.add("score");
 
 	SearchContainer searchContainer = new SearchContainer(renderRequest, null, null, SearchContainer.DEFAULT_CUR_PARAM, SearchContainer.DEFAULT_DELTA, portletURL, headerNames, LanguageUtil.format(pageContext, "no-messages-were-found-that-matched-the-keywords-x", "<strong>" + HtmlUtil.escape(keywords) + "</strong>"));
 
@@ -93,16 +83,13 @@ String keywords = ParamUtil.getString(request, "keywords");
 
 		SearchContext searchContext = SearchContextFactory.getInstance(request);
 
+		searchContext.setAttribute("paginationType", "more");
 		searchContext.setCategoryIds(categoryIdsArray);
 		searchContext.setEnd(searchContainer.getEnd());
 		searchContext.setKeywords(keywords);
 		searchContext.setStart(searchContainer.getStart());
 
 		Hits results = indexer.search(searchContext);
-
-		ThreadHits threadHits = new ThreadHits();
-
-		threadHits.recordHits(results, searchContainer.getStart(), searchContainer.getEnd());
 
 		int total = results.getLength();
 
@@ -116,6 +103,7 @@ String keywords = ParamUtil.getString(request, "keywords");
 			ResultRow row = new ResultRow(doc, i, i);
 
 			// Position
+
 			if(bShowThreadNumberCol)
 				row.addText(searchContainer.getStart() + i + 1 + StringPool.PERIOD);
 
@@ -142,7 +130,7 @@ String keywords = ParamUtil.getString(request, "keywords");
 			categoryUrl.setParameter("redirect", currentURL);
 			categoryUrl.setParameter("mbCategoryId", String.valueOf(categoryId));
 
-			row.addText(category.getName(), categoryUrl);
+			row.addText(HtmlUtil.escape(category.getName()), categoryUrl);
 
 			// Thread and message
 
@@ -181,14 +169,10 @@ String keywords = ParamUtil.getString(request, "keywords");
 			rowURL.setParameter("redirect", currentURL);
 			rowURL.setParameter("messageId", String.valueOf(messageId));
 
-			row.addText(message.getSubject(), rowURL);
+			row.addText(HtmlUtil.escape(message.getSubject()), rowURL);
 			row.addText(String.valueOf(thread.getMessageCount()), rowURL);
 			if(bShowThreadViewsCol)
 				row.addText(String.valueOf(thread.getViewCount()), rowURL);
-
-			// Score
-
-			row.addScore(results.score(i));
 
 			// Add result row
 
@@ -205,7 +189,7 @@ String keywords = ParamUtil.getString(request, "keywords");
 
 		<br /><br />
 
-		<liferay-ui:search-iterator searchContainer="<%= searchContainer %>" />
+		<liferay-ui:search-iterator searchContainer="<%= searchContainer %>" type="more" />
 
 	<%
 	}
@@ -231,5 +215,5 @@ PortalUtil.addPortletBreadcrumbEntry(request, LanguageUtil.get(pageContext, "sea
 %>
 
 <%!
-private static Log _log = LogFactoryUtil.getLog("portal-web.docroot.html.portlet.message_boards.search.jsp");
+private static Log _log = LogFactoryUtil.getLog("portal-web.docroot.html.portlet.message_boards.search_jsp");
 %>
