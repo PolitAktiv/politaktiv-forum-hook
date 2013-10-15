@@ -313,8 +313,7 @@
 		</td>
 	</tr>
 	
-	<% //<%@ include file="/html/portlet/message_boards/view_thread_message_footer.jspf"%>	
-<liferay-util:include page="/html/portlet/message_boards/view_thread_message_footer.jspf" />
+	<%@ include file="/html/portlet/message_boards/view_thread_message_footer.jspf"%>	
 	<%
 		boolean enableModeratorHint = themeDisplay.isSignedIn();
 	%>

@@ -140,8 +140,8 @@ if (Validator.isNull(redirect)) {
 	request.setAttribute("edit_message.jsp-assetTagNames", ParamUtil.getString(request, "assetTagNames"));
 	%>
 
-	<% // <%@ include file="/html/portlet/message_boards/view_thread_message.jspf" %>
-	<liferay-util:include page="/html/portlet/message_boards/view_thread_message.jspf" />
+	<%@ include file="/html/portlet/message_boards/view_thread_message.jspf" %>
+	
 	<%
 	request.removeAttribute("edit_message.jsp-assetTagNames");
 
@@ -209,8 +209,7 @@ if (Validator.isNull(redirect)) {
 		<aui:field-wrapper label="body">
 			<c:choose>
 				<c:when test='<%= ((messageId != 0) && message.isFormatBBCode()) || ((messageId == 0) && messageFormat.equals("bbcode")) %>'>
-					<% //<%@ include file="/html/portlet/message_boards/bbcode_editor.jspf" %>
-					<liferay-util:include page="/html/portlet/message_boards/bbcode_editor.jspf" />
+					<%@ include file="/html/portlet/message_boards/bbcode_editor.jspf" %>
 				</c:when>
 				<c:otherwise>
 					<liferay-util:include page="/html/portlet/message_boards/html_editor.jspf" />
@@ -462,7 +461,7 @@ if (Validator.isNull(redirect)) {
 		String classHoverName = "portlet-section-body-hover results-row hover";
 		%>
 
-		<liferay-util:include page="/html/portlet/message_boards/view_thread_message.jspf" />
+		<%@ include file="/html/portlet/message_boards/view_thread_message.jspf" %>
 	</c:if>
 </aui:form>
 

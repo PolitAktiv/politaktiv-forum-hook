@@ -72,8 +72,7 @@ request.setAttribute("view.jsp-portletURL", portletURL);
 
 <c:choose>
 	<c:when test='<%= topLink.equals("message-boards-home") %>'>
-		<% //<%@ include file="/html/portlet/message_boards/category_subscriptions.jspf" %>
-		<liferay-util:include page="/html/portlet/category_subscriptions.jspf" />
+		<%@ include file="/html/portlet/message_boards/category_subscriptions.jspf" %>
 
 		<%
 		boolean showAddCategoryButton = MBCategoryPermission.contains(permissionChecker, scopeGroupId, categoryId, ActionKeys.ADD_CATEGORY);
@@ -222,8 +221,8 @@ request.setAttribute("view.jsp-portletURL", portletURL);
 						<portlet:param name="mbCategoryId" value="<%= String.valueOf(curCategory.getCategoryId()) %>" />
 					</liferay-portlet:renderURL>
 
-					<% //<%@ include file="/html/portlet/message_boards/subscribed_category_columns.jspf" %>
-					<liferay-util:include page="/html/portlet/message_boards/subscribed_category_columns.jspf" />
+					<%@ include file="/html/portlet/message_boards/subscribed_category_columns.jspf" %>
+
 				</liferay-ui:search-container-row>
 
 				<liferay-ui:search-iterator type="more" />
@@ -305,9 +304,8 @@ request.setAttribute("view.jsp-portletURL", portletURL);
 					<portlet:param name="messageId" value="<%= String.valueOf(message.getMessageId()) %>" />
 				</liferay-portlet:renderURL>
 
-				<%//<%@ include file="/html/portlet/message_boards/user_thread_columns.jspf" %>
-				<liferay-util:include page="/html/portlet/message_boards/user_thread_columns.jspf" />
-				
+				<%@ include file="/html/portlet/message_boards/user_thread_columns.jspf" %>
+			
 			</liferay-ui:search-container-row>
 
 			<liferay-ui:search-iterator />

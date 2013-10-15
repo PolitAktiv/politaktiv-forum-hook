@@ -328,8 +328,7 @@ MBThreadFlag threadFlag = MBThreadFlagLocalServiceUtil.getThreadFlag(themeDispla
 			<liferay-util:include page="/html/portlet/message_boards/view_thread_tree.jsp" />
 		</c:when>
 		<c:otherwise>
-			<% // <%@ include file="/html/portlet/message_boards/view_thread_flat.jspf" %>
-			<liferay-util:include page="/html/portlet/message_boards/view_thread_flat.jspf" />
+			<%@ include file="/html/portlet/message_boards/view_thread_flat.jspf" %>
 		</c:otherwise>
 	</c:choose>
 </div>
