@@ -99,4 +99,4 @@
 />
 
 
-<%@ include file="/html/portlet/message_boards/category_columns_action.jspf %>
+<%@ include file="/html/portlet/message_boards/category_columns_action.jspf" %>
