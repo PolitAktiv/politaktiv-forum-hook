@@ -24,7 +24,7 @@
 						alt="Creative Commons Lizenzvertrag" style="border-width: 0"
 						src="<%= themeDisplay.getPathThemeImages() %>/custom/message-boards/CC_BY_NC_ND_80x15.png" />
 				</a>
-				<td>Dieser <span xmlns:dct="http://purl.org/dc/terms/"
+				Dieser <span xmlns:dct="http://purl.org/dc/terms/"
 					href="http://purl.org/dc/dcmitype/Text" rel="dct:type">
 						<%= LanguageUtil.get(pageContext, "message") %></span> 
 						<%= LanguageUtil.get(pageContext, "message-license-stmt") %><a rel="license"

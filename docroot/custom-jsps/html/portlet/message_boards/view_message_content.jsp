@@ -117,7 +117,7 @@ MBThreadFlag threadFlag = MBThreadFlagLocalServiceUtil.getThreadFlag(themeDispla
 <div class="thread-controls">
 	<c:if test="<%= PropsValues.MESSAGE_BOARDS_THREAD_PREVIOUS_AND_NEXT_NAVIGATION_ENABLED %>">
 		<div class="thread-navigation">
-			<liferay-ui:message key="threads" />
+			<liferay-ui:message key="threads_pa-custom" />
 
 			[
 
@@ -169,7 +169,7 @@ MBThreadFlag threadFlag = MBThreadFlagLocalServiceUtil.getThreadFlag(themeDispla
 					<liferay-ui:icon
 						image="post"
 						label="<%= true %>"
-						message="post-new-thread"
+						message="post-new-thread_pa-custom"
 						url="<%= addMessageURL %>"
 					/>
 				</td>
@@ -224,7 +224,7 @@ MBThreadFlag threadFlag = MBThreadFlagLocalServiceUtil.getThreadFlag(themeDispla
 							<liferay-ui:icon
 								image="unlock"
 								label="<%= true %>"
-								message="unlock-thread"
+								message="unlock-thread_pa-custom"
 								url="<%= unlockThreadURL %>"
 							/>
 						</c:when>
@@ -239,7 +239,7 @@ MBThreadFlag threadFlag = MBThreadFlagLocalServiceUtil.getThreadFlag(themeDispla
 							<liferay-ui:icon
 								image="lock"
 								label="<%= true %>"
-								message="lock-thread"
+								message="lock-thread_pa-custom"
 								url="<%= lockThreadURL %>"
 							/>
 						</c:otherwise>
@@ -259,7 +259,7 @@ MBThreadFlag threadFlag = MBThreadFlagLocalServiceUtil.getThreadFlag(themeDispla
 					<liferay-ui:icon
 						image="forward"
 						label="<%= true %>"
-						message="move-thread"
+						message="move-thread_pa-custom"
 						url="<%= editThreadURL %>"
 					/>
 				</td>

@@ -61,7 +61,7 @@ if (null == body || body.length() < 1) {
 boolean attachments = BeanParamUtil.getBoolean(message, request, "attachments");
 boolean preview = ParamUtil.getBoolean(request, "preview");
 boolean quote = ParamUtil.getBoolean(request, "quote");
-boolean splitThread = ParamUtil.getBoolean(request, "splitThread");
+boolean splitThread = ParamUtil.getBoolean(request, "splitThread_pa-custom");
 
 String[] existingAttachments = new String[0];
 
@@ -84,7 +84,7 @@ if (Validator.isNull(redirect)) {
 <liferay-ui:header
 	backURL="<%= redirect %>"
 	localizeTitle="<%= (message == null) %>"
-	title='<%= (message == null) ? "new-message" : message.getSubject() %>'
+	title='<%= (message == null) ? "new-message_pa-custom" : message.getSubject() %>'
 />
 
 <c:if test="<%= preview %>">
@@ -168,8 +168,8 @@ if (Validator.isNull(redirect)) {
 
 	<liferay-ui:error exception="<%= CaptchaMaxChallengesException.class %>" message="maximum-number-of-captcha-attempts-exceeded" />
 	<liferay-ui:error exception="<%= CaptchaTextException.class %>" message="text-verification-failed" />
-	<liferay-ui:error exception="<%= LockedThreadException.class %>" message="thread-is-locked" />
-	<liferay-ui:error exception="<%= MessageBodyException.class %>" message="please-enter-a-valid-message" />
+	<liferay-ui:error exception="<%= LockedThreadException.class %>" message="thread-is-locked_pa-custom" />
+	<liferay-ui:error exception="<%= MessageBodyException.class %>" message="please-enter-a-valid-message_pa-custom" />
 	<liferay-ui:error exception="<%= MessageSubjectException.class %>" message="please-enter-a-valid-subject" />
 
 	<liferay-ui:error exception="<%= FileExtensionException.class %>">
@@ -299,15 +299,15 @@ if (Validator.isNull(redirect)) {
 			}
 			%>
 
-			<aui:input disabled="<%= disabled %>" helpMessage="message-boards-message-question-help" inlineLabel="left" label="mark-as-a-question" name="question" type="checkbox" value="<%= question %>" />
+			<aui:input disabled="<%= disabled %>" helpMessage="message-boards-message-question-help_pa-custom" inlineLabel="left" label="mark-as-a-question" name="question" type="checkbox" value="<%= question %>" />
 		</c:if>
 
 		<c:if test="<%= (message == null) && themeDisplay.isSignedIn() && allowAnonymousPosting %>">
-			<aui:input helpMessage="message-boards-message-anonymous-help" inlineLabel="left" name="anonymous" type="checkbox" />
+			<aui:input helpMessage="message-boards-message-anonymous-help_pa-custom" inlineLabel="left" name="anonymous" type="checkbox" />
 		</c:if>
 
 		<c:if test="<%= (message == null) && themeDisplay.isSignedIn() && !SubscriptionLocalServiceUtil.isSubscribed(themeDisplay.getCompanyId(), user.getUserId(), MBThread.class.getName(), threadId) && !SubscriptionLocalServiceUtil.isSubscribed(themeDisplay.getCompanyId(), user.getUserId(), MBCategory.class.getName(), categoryId) %>">
-			<aui:input helpMessage="message-boards-message-subscribe-me-help" inlineLabel="left" label="subscribe-me" name="subscribe" type="checkbox" value="<%= subscribeByDefault %>" />
+			<aui:input helpMessage="message-boards-message-subscribe-me-help_pa-custom" inlineLabel="left" label="subscribe-me" name="subscribe" type="checkbox" value="<%= subscribeByDefault %>" />
 		</c:if>
 
 		<c:if test="<%= (priorities.length > 0) && MBCategoryPermission.contains(permissionChecker, scopeGroupId, categoryId, ActionKeys.UPDATE_THREAD_PRIORITY) %>">
@@ -371,7 +371,7 @@ if (Validator.isNull(redirect)) {
 		
 		<c:if test="<%= (curParentMessage == null) || childrenMessagesTaggable %>">
 			<liferay-ui:panel defaultState="closed" extended="<%= false %>" id="mbMessageCategorizationPanel" persistState="<%= true %>" title="categorization">
-				<aui:input name="tags" type="assetTags" />
+				<aui:input name="tags_pa-custom" type="assetTags" />
 			</liferay-ui:panel>
 		</c:if>
 
@@ -564,6 +564,6 @@ else if (message != null) {
 else {
 	MBUtil.addPortletBreadcrumbEntries(categoryId, request, renderResponse);
 
-	PortalUtil.addPortletBreadcrumbEntry(request, LanguageUtil.get(pageContext, "add-message"), currentURL);
+	PortalUtil.addPortletBreadcrumbEntry(request, LanguageUtil.get(pageContext, "add-message_pa-custom"), currentURL);
 }
 %>

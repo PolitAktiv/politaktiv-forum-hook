@@ -70,7 +70,7 @@
 									<liferay-ui:icon
 										image="../message_boards/unban_user"
 										label="<%= true %>"
-										message="unban-this-user"
+										message="unban-this-user_pa-custom"
 										url="<%= unbanUserURL.toString() %>"
 									/>
 								</c:when>
@@ -85,7 +85,7 @@
 									<liferay-ui:icon
 										image="../message_boards/ban_user"
 										label="<%= true %>"
-										message="ban-this-user"
+										message="ban-this-user_pa-custom"
 										url="<%= banUserURL.toString() %>"
 									/>
 								</c:otherwise>
@@ -421,7 +421,7 @@
 							<liferay-ui:icon
 								image="unlink"
 								label="<%= true %>"
-								message="split-thread"
+								message="split-thread_pa-custom"
 								url="<%= splitThreadURL %>"
 							/>
 						</li>

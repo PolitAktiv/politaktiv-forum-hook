@@ -122,7 +122,7 @@ MBThread thread = message.getThread();
 
 				<liferay-ui:icon
 					image="unlock"
-					message="unlock-thread"
+					message="unlock-thread_pa-custom"
 					url="<%= unlockThreadURL %>"
 				/>
 			</c:when>
@@ -137,7 +137,7 @@ MBThread thread = message.getThread();
 
 				<liferay-ui:icon
 					image="lock"
-					message="lock-thread"
+					message="lock-thread_pa-custom"
 					url="<%= lockThreadURL %>"
 				/>
 			</c:otherwise>

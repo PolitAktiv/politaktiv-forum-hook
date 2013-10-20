@@ -70,13 +70,13 @@ String keywords = ParamUtil.getString(request, "keywords");
 
 	if(bShowThreadNumberCol)
 		headerNames.add("#");
-	headerNames.add("category");
-	headerNames.add("message");
-	headerNames.add("thread-posts");
+	headerNames.add("category_pa-custom");
+	headerNames.add("message_pa-custom");
+	headerNames.add("thread-posts_pa-custom");
 	if(bShowThreadViewsCol)
-		headerNames.add("thread-views");
+		headerNames.add("thread-views_pa-custom");
 
-	SearchContainer searchContainer = new SearchContainer(renderRequest, null, null, SearchContainer.DEFAULT_CUR_PARAM, SearchContainer.DEFAULT_DELTA, portletURL, headerNames, LanguageUtil.format(pageContext, "no-messages-were-found-that-matched-the-keywords-x", "<strong>" + HtmlUtil.escape(keywords) + "</strong>"));
+	SearchContainer searchContainer = new SearchContainer(renderRequest, null, null, SearchContainer.DEFAULT_CUR_PARAM, SearchContainer.DEFAULT_DELTA, portletURL, headerNames, LanguageUtil.format(pageContext, "no-messages-were-found-that-matched-the-keywords-x_pa-custom", "<strong>" + HtmlUtil.escape(keywords) + "</strong>"));
 
 	try {
 		Indexer indexer = IndexerRegistryUtil.getIndexer(MBMessage.class);
@@ -182,7 +182,7 @@ String keywords = ParamUtil.getString(request, "keywords");
 
 
 		<span class="aui-search-bar">
-			<aui:input inlineField="<%= true %>" label="" name="keywords" size="30" title="search-messages" type="text" value="<%= keywords %>" />
+			<aui:input inlineField="<%= true %>" label="" name="keywords" size="30" title="search-messages_pa-custom" type="text" value="<%= keywords %>" />
 
 			<aui:button type="submit" value="search" />
 		</span>

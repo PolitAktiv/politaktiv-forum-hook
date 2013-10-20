@@ -1,0 +1,383 @@
+a-subset-of-users-has-been-displayed-for-you-to-review_pa-custom=Einige BÃ¼rger werden zum Ã¼berprÃ¼fen angezeigt.
+a-thread-cannot-be-split-at-its-root-message_pa-custom=Ein Thema kann nicht bei seinem ersten Beitrag aufgeteilt werden.
+account-created-notification-body-with-password-help_pa-custom=Bitte geben Sie den Inhalt der E-Mail an, die versendet wird, wenn sich ein BÃ¼rger registriert. In der E-Mail sollte das automatisch generiete Passwort angegeben sein.
+account-created-notification-body-without-password-help_pa-custom=Bitte geben Sie den Inhalt der E-Mail an, die versendet wird, wenn sich ein BÃ¼rger registriert. Das Password wird nicht mit Ã¼bermittelt.
+action.ADD_CATEGORY_pa-custom=Themenbereich hinzufÃ¼gen
+action.ADD_COMMUNITY_pa-custom=Projekt hinzufÃ¼gen
+action.ADD_MESSAGE_pa-custom=Beitrag hinzufÃ¼gen
+action.ADD_SUBCATEGORY_pa-custom=Themenbereich hinzufÃ¼gen
+action.ADD_USER_pa-custom=BÃ¼rger hinzufÃ¼gen
+action.ASSIGN_MEMBERS_pa-custom=BÃ¼rger zuweisen
+action.ASSIGN_USER_ROLES_pa-custom=BÃ¼rgerrollen zuweisen
+action.BAN_USER_pa-custom=BÃ¼rger bannen
+action.DELETE_USER_pa-custom=BÃ¼rger lÃ¶schen
+action.EXPORT_USER_pa-custom=BÃ¼rger exportieren
+action.LOCK_THREAD_pa-custom=Dieses Thema sperren
+action.MANAGE_USERS_pa-custom=BÃ¼rger verwalten
+action.MOVE_THREAD_pa-custom=Thema verschieben
+action.REPLY_TO_MESSAGE_pa-custom=Auf Beitrag antworten action.UPDATE_THREAD_PRIORITY_pa-custom=Themen-PrioritÃ¤t aktualisieren
+action.UPDATE_USER_pa-custom=BÃ¼rger aktualisieren
+action.VIEW_USER_pa-custom=BÃ¼rger anzeigen
+activity-message-boards-add-message_pa-custom={1} hat einen neuen Beitrag im Forum erstellt, {3}.
+activity-message-boards-add-message-in_pa-custom={1} hat einen neuen Beitrag im Forum erstellt, {3}, in {0}.
+activity-message-boards-reply-message_pa-custom={1} hat auf den Beitrag von {2} im Forum geantwortet, {3}.
+activity-message-boards-reply-message-in_pa-custom={1} hat auf den Beitrag von {2} im Forum geantwortet, in {0}.
+add-category_pa-custom=Themenbereich hinzufÃ¼gen
+add-child-category_pa-custom=Untergeordneten Themenbereich hinzufÃ¼gen
+add-explanation-post_pa-custom=Eine ErklÃ¤rung hinzufÃ¼gen.
+add-explanation-post-to-the-source-thread_pa-custom=Eine ErklÃ¤rung zum ursprÃ¼nglichen Beitrag hinzufÃ¼gen.
+add-message_pa-custom=Beitrag hinzufÃ¼gen
+add-new-user_pa-custom=Neuen BÃ¼rger hinzufÃ¼gen
+add-subcategory_pa-custom=Themenbereich hinzufÃ¼gen
+add-user_pa-custom=BÃ¼rger hinzufÃ¼gen
+all-categories_pa-custom=Alle Teilprojekte
+allow-users-to-add-x-to-any-website_pa-custom=BÃ¼rgern das einbinden von <strong>{0}</strong> in anderen Webseiten erlauben.
+allow-users-to-add-x-to-facebook_pa-custom=BÃ¼rgern das einbinden von <strong>{0}</strong> bei Facebook erlauben.
+allow-users-to-add-x-to-igoogle_pa-custom=BÃ¼rgern erlauben, <strong>{0}</strong> bei iGoogle einzubinden.
+allow-users-to-add-x-to-netvibes-pages_pa-custom=BÃ¼rgern ermÃ¶glichen, <strong>{0}</strong> in Netvibes einzubinden.
+allow-users-to-automatically-login_pa-custom=BÃ¼rgern das automatische Login erlauben?
+allow-users-to-request-forgotten-passwords_pa-custom=Sollen BÃ¼rger vergessene PasswÃ¶rter anfordern kÃ¶nnen?
+allow-users-to-request-forgotten-passwords-help_pa-custom=Wenn dieses HÃ¤kchen gesetzt ist, dann kÃ¶nnen BÃ¼rger ein neues Password anfragen. Dieses wird dann an E-Mail-Adresse des BÃ¼rgers geschickt.
+allow-users-to-request-password-reset-links_pa-custom=Sollen BÃ¼rger ihre PasswÃ¶rter zurÃ¼cksetzen kÃ¶nnen?
+allow-users-to-request-password-reset-links-help_pa-custom=Wenn dieses HÃ¤kchen gesetzt ist, dann kÃ¶nnen BÃ¼rger ein RÃ¼cksetzen Ihres Passwortes beantragen. Dieses wird dann an E-Mail-Adresse des BÃ¼rgers geschickt.
+allow-users-to-share-x-with-friends_pa-custom=BÃ¼rgern das Teilen von <strong>{0}</strong> mit Freunden erlauben.
+an-unexpected-error-occurred-while-sending-your-message_pa-custom=Ein unerwarteter Fehler ist beim Senden Ihres Beitrags aufgetreten.
+anonymous-posting_pa-custom=Anonymer Beitrag
+anonymous-posting_pa-custom=Anonymer Beitrag
+apply-to-existing-users_pa-custom=Auf vorhandenen BÃ¼rger anwenden.
+apply-to-existing-users_pa-custom=Auf vorhandenen BÃ¼rger anwenden.
+are-you-sure-you-want-to-deactivate-the-selected-users_pa-custom=Sind Sie sicher, dass Sie die ausgewÃ¤hlten BÃ¼rger deaktivieren mÃ¶chten?
+are-you-sure-you-want-to-delete-the-selected-category-and-all-its-items_pa-custom=Sind Sie sicher, dass Sie die ausgewÃ¤hlten Teilprojekte mit ihren Objekten lÃ¶schen wollen?
+are-you-sure-you-want-to-delete-the-selected-user_pa-custom=Sind Sie sicher, dass Sie den ausgewÃ¤hlten BÃ¼rger lÃ¶schen wollen?
+are-you-sure-you-want-to-delete-the-selected-user-groups_pa-custom=Sind Sie sicher, dass Sie die ausgewÃ¤hlten BÃ¼rgergruppen lÃ¶schen wollen?
+are-you-sure-you-want-to-delete-this-message_pa-custom=Sind Sie sicher, dass Sie den Beitrag lÃ¶schen wollen?
+are-you-sure-you-want-to-delete-this-topic-and-all-its-messages_pa-custom=Sind Sie sicher, dass Sie das Thema mit allen BeitrÃ¤gen lÃ¶schen wollen?
+are-you-sure-you-want-to-move-selected-messages-to_pa-custom=Sind Sie sicher, dass Sie die selektierten BeitrÃ¤ge verschieben wollen?
+are-you-sure-you-want-to-notify-new-users_pa-custom=Sind Sie sicher, dass Sie die neuen BÃ¼rger benachrichtigen wollen?
+are-you-sure-you-want-to-permanently-delete-the-selected-users_pa-custom=Sind Sie sicher, dass Sie die ausgwÃ¤hlten BÃ¼rger permanent lÃ¶schen wollen?
+assign-members_pa-custom=BÃ¼rger zuweisen
+assign-to-users_pa-custom=Den BÃ¼rgern zuweisen
+assign-user-group-roles_pa-custom=Weisen Sie BÃ¼rgergruppe-Rollen zu 
+assign-users_pa-custom=BÃ¼rger zuweisen
+associate_pa-custom=BÃ¼rger
+attach-to-message_pa-custom=An Beitrag anhÃ¤ngen
+autogenerate-user-screen-names_pa-custom=Login-Namen fÃ¼r BÃ¼rger automatisch generieren
+available-categories_pa-custom=VerfÃ¼gbare Teilprojekte
+ban-this-user_pa-custom=Diesen BÃ¼rger verbannen
+banned-user_pa-custom=Verbannter BÃ¼rger
+banned-users_pa-custom=Verbannte BÃ¼rger
+bookmark_pa-custom=Bookmark
+bookmarks_pa-custom=Bookmarks
+browse-categories_pa-custom=Teilprojekte durchsuchen
+by-user-id_pa-custom=Nach BÃ¼rger ID
+call-this-user_pa-custom=Diesen BÃ¼rger anrufen
+cas-no-such-user-redirect-url-help_pa-custom=Falls ein Benutzer sich am CAS Server anmelden kann, aber im Portal nicht bekannt ist, wird er auf diese Seite weitergeleitet. Wenn Sie die BÃ¼rgerkonten mit einem LDAP Server synchroniseren und der BÃ¼rger im LDAP Server nicht gefunden werden kann, wird er auf diese Seite weitergeleitet.
+categories_pa-custom=Teilprojekte
+categories-and-messages_pa-custom=Teilprojekte und BeitrÃ¤ge
+category_pa-custom=Themenbereich
+category-details_pa-custom=Teilprojektdetails
+category-id_pa-custom=Teilprojekt-ID
+category-name_pa-custom=Bezeichnung Teilprojekt
+category-sets_pa-custom=Kataloge Teilprojekte
+category.gadgets_pa-custom=Gadgets
+category.test_pa-custom=Test
+category.workflow_pa-custom=Workflow
+chat_pa-custom=Chat
+check-to-apply-the-changes-to-existing-users_pa-custom=Aktivieren um die Ãnderungen auf vorhandene BÃ¼rger anzuwenden. Die Ãnderungen sind nach dem nÃ¤chsten Anmelden des BÃ¼rgers aktiviert.
+choose-this-category_pa-custom=WÃ¤hlen Sie dieses Themenbereich
+click-ok-to-create-a-new-thread-with-the-following-messages_pa-custom=Klicken Sie OK, um ein neues Thema mit den folgenden BeitrÃ¤gen zu erstellen.
+code_pa-custom=Code
+community_pa-custom=Projekt
+current-user_pa-custom=Aktueller BÃ¼rger
+custom-message_pa-custom=Beitrag anpassen
+custom.field.java.lang.String_pa-custom=Text
+delete-category_pa-custom=Themenbereich lÃ¶schen
+delete-missing-layouts-help_pa-custom=Wenn diese Option ausgewÃ¤hlt wird, werden alle Seiten in diesem Projekt, die nicht in der Import LAR-Datei verfÃ¼gbar sind, gelÃ¶scht.
+delete-vocabulary_pa-custom=Vocabular lÃ¶schen
+deleted-user_pa-custom=BÃ¼rger lÃ¶schen
+deleting-messages_pa-custom=BeitrÃ¤ge werden gelÃ¶schtâ¦
+details_pa-custom=Details
+diff_pa-custom=Diff
+diffs_pa-custom=Diffs
+edit-groups-for-user_pa-custom=Gruppen von BÃ¼rgern bearbeiten:
+edit-message_pa-custom=Beitrag bearbeiten
+edit-roles-for-user_pa-custom=Rollen fÃ¼r BÃ¼rger bearbeiten:
+edit-user_pa-custom=BÃ¼rger
+edit-users_pa-custom=BÃ¼rger bearbeiten
+edit-users-for-group_pa-custom=BÃ¼rger einer Gruppe bearbeiten:
+enable-message-ratings_pa-custom=Beitrags-Bewertungen erlauben
+enter-one-role-name-per-line-a-user-must-belong-to-one-of-these-roles-in-order-to-add-this-plugin-to-a-page_pa-custom=Eine Rolle <strong>pro Zeile</strong> eingeben. Ein BÃ¼rger muss eine dieser Rollen besitzen, um dieses Plugin einer Seite hinzufÃ¼gen zu kÃ¶nnen.
+
+enter-one-role-name-per-line-a-user-must-belong-to-one-of-these-roles-in-order-to-add-this-portlet-to-a-page_pa-custom=Einen Rollen-Namen <strong>pro Zeile</strong> eingeben. Ein BÃ¼rger muss  eine dieser Rollen besitzen, um dieses Portlet einer Seite hinzufÃ¼gen zu kÃ¶nnen.
+enter-one-user-email-address-per-line-to-reserve-the-user-email-address_pa-custom=Eine E-Mail Adresse <strong>pro Zeile</strong> eingeben um die  E-Mail Adresse eines BÃ¼rgers zu reservieren.
+enter-the-default-role-names-per-line-that-are-associated-with-newly-created-users_pa-custom=Geben Sie <strong>eine</strong> Rolle <strong>pro Zeile</strong> ein, die mit neu angelegten BÃ¼rgern verknÃ¼pft werden soll.
+enter-the-default-user-group-names-per-line-that-are-associated-with-newly-created-users_pa-custom=Geben Sie <strong>eine</strong> Gruppe <strong>pro Zeile</strong> ein, die mit neu angelegten BÃ¼rgern verknÃ¼pft werden soll.
+enter-the-name,-image,-and-priority-level-in-descending-order_pa-custom=Bitte geben Sie Namen, Bild und PrioritÃ¤tsstufe in absteigender Folge ein. Themen mit einer hÃ¶heren PrioritÃ¤t werden vor Themen mit einer niedrigeren PrioritÃ¤t angezeigt. 'Name' ist der angezeigte Name der PrioritÃ¤t. 'Bild' ist die graphische Darstellung der PrioritÃ¤t und kann ein kompletter URL oder ein Pfad relativ zum Thema sein.
+entire-message_pa-custom=Kompletter Beitrag
+expiration-enabled-help_pa-custom=Durch die Aktivierung muÃ der BÃ¼rger sein Kennwort nach einer gegebenen Zeitspanne Ã¤ndern.
+export-import-categories-help_pa-custom=Wenn diese Option aktiviert wird, dann werden alle Teilprojekte importiert oder exportiert und ihre Hierarchie wird beibehalten. Beim Import, werden keine Duplikate erzeugt, wenn ein Themenbereich mit gleichem Namen bereits existiert.
+export-import-referenced-categories-help_pa-custom=Wenn eine dies ausgewÃ¤hlt wird, dann werden alle Teilprojekte die von einem Portlet referenziert werden exportiert oder importiert, inkl. der Hierarchie. Beim Import werden Duplikate des Teilprojekts nicht erstellt wenn ein Themenbereich mit dem gleichen Namen bereits besteht.
+featured_pa-custom=Featured
+feed_pa-custom=Feed
+feeds_pa-custom=Feeds
+filter-by-user_pa-custom=Nach BÃ¼rger filtern
+find-members_pa-custom=BÃ¼rger suchen
+first-message_pa-custom=Erster Beitrag
+first-thread_pa-custom=Erstes Thema
+give-x-permission-to-users-with-the-x-role_pa-custom=Die Erlaubnis {0} an BÃ¼rger mit der Rolle {1} vergeben.
+go-to-category_pa-custom=Zu Themenbereich gehen
+grace-limit-help_pa-custom=Die Zeit ohne Anmeldung durch den BÃ¼rger, nach der das Kennwort abgelaufen ist, bevor er aufgefordert wird, ein neues Kennwort einzutragen.
+header_pa-custom=Header
+header-text_pa-custom=Header Text
+host_pa-custom=Host
+how-do-users-authenticate_pa-custom=Wie authentifizieren sich BÃ¼rger?
+import-data-strategy-copy-as-new-help_pa-custom=Bei jedem Import werden alle Daten und Inhalte in der zu importiertenden LAR-Datei als neue DatensÃ¤tze im aktuellen Projekt angelegt.
+inactive-user_pa-custom=Inaktiver BÃ¼rger
+instructions-for-the-user_pa-custom=Anweisungen fÃ¼r den BÃ¼rger
+invite-members_pa-custom=BÃ¼rger einladen
+journal-feed-target-layout-friendly-url-help_pa-custom=Geben sie eine "friendly URL" (kurze und lesbare URL) einer Seite an, welche zur Vorgabe fÃ¼r aktuell ungelistete Feed-EintrÃ¤ge gemacht wird. Der Feed wird nur Seiten beinhalten, welche zm Projekt gehÃ¶ren, auf die sich diese URL bezieht.
+last-message_pa-custom=Letzter Beitrag
+last-thread_pa-custom=Letztes Thema
+layout_pa-custom=Layout
+layout.types.panel_pa-custom=Panel
+leave-a-copy-of-the-forwarded-message_pa-custom=Soll eine Kopie des weitergeleiteten Beitrags hinterlassen werden?
+link_pa-custom=Link
+links_pa-custom=Links
+list-users-with-the-permission-to-perform-the-action_pa-custom=Liste der BÃ¼rger, die diese Aktion durchfÃ¼hren dÃ¼rfen.
+live_pa-custom=Live
+loading-message_pa-custom=Lade Beitragâ¦
+loading-messages_pa-custom=Lade BeitrÃ¤geâ¦
+lock-thread_pa-custom=Thema sperren
+login-url-for-opensso-help_pa-custom=Anhand dieser URL wird die Anmeldeseite des OpenSSO festgelegt. Um festzulegen auf welche Seite ein BÃ¼rger nach der erfolgreichen Anmeldung weitergeleitet werden soll, fÃ¼gen Sie bitte in "goto_pa-custom=" als Parameter der URL hinzu.
+logout-url-for-opensso-help_pa-custom=Anhand dieser URL wird die Abmeldeseite des OpenSSO festgelegt. Um festzulegen auf welche Seite ein BÃ¼rger nach dem Abmelden weitergeleitet werden soll, fÃ¼gen Sie bitte in "goto_pa-custom=" als Parameter der URL hinzu.
+manager_pa-custom=Manager
+max-num-of-users_pa-custom=Maximale Anzahl von BÃ¼rgern
+meeting_pa-custom=Meeting
+members_pa-custom=BÃ¼rger
+members-to-invite_pa-custom=Einzuladende BÃ¼rger
+message_pa-custom=Beitrag
+message-added-email_pa-custom="Beitrag angefÃ¼gt" E-Mail
+message-boards-message-anonymous-help_pa-custom=Durch die Aktivierung wird dieser Beitrag als anonymer BÃ¼rger angelegt.
+message-boards-message-question-help_pa-custom=Durch die Aktivierung werden die nachfolgenden BeitrÃ¤ge als Antwort markiert.
+message-boards-message-subscribe-by-default-help_pa-custom=Automatisch das Thema fÃ¼r einen BÃ¼rger abonnieren, an dem dieser teilnimmt.
+message-boards-message-subscribe-me-help_pa-custom=Wenn dieses HÃ¤kchen gesetz ist, dann haben Sie dieses Thema abonniert.
+message-format_pa-custom=Beitrags-Format
+message-headers_pa-custom=Beitrags-Betreff
+message-list_pa-custom=Liste der BeitrÃ¤ge
+message-recipients-limit_pa-custom=Beitrag EmpfÃ¤nger Limit:
+message-thread_pa-custom=Thema mit BeitrÃ¤gen
+message-updated-email_pa-custom="Beitrag aktualisiert" E-Mail
+messages_pa-custom=BeitrÃ¤ge
+messages-have-been-deleted_pa-custom=BeitrÃ¤ge sind gelÃ¶scht worden.
+messages-per-inbox-preview_pa-custom=BeitrÃ¤ge pro Inbox Vorschau:
+messages-per-page_pa-custom=BeitrÃ¤ge pro Seite
+model.resource.com.liferay.portal.model.Group_pa-custom=Community
+model.resource.com.liferay.portlet.documentlibrary.model.DLFileEntry_pa-custom=Dokumente
+model.resource.com.liferay.portlet.journal.model.JournalArticle_pa-custom=Web Content
+model.resource.com.liferay.portlet.journal.model.JournalFeed_pa-custom=Web Content Feed
+monitoring_pa-custom=Monitoring
+month-abbreviation_pa-custom=m
+move-thread_pa-custom=Thema verschieben
+new-category_pa-custom=Neuer Themenbereich
+new-message_pa-custom=Neuer Beitrag
+new-user_pa-custom=Neu eingerichteter BÃ¼rger
+next-message_pa-custom=NÃ¤chster Beitrag
+next-thread_pa-custom=NÃ¤chstes Thema
+no-categories-found_pa-custom=Keine Teilprojekte gefunden.
+no-messages-found_pa-custom=Es wurden keine BeitrÃ¤ge gefunden.
+no-messages-selected_pa-custom=Keine BeitrÃ¤ge vorgewÃ¤hlt.
+no-messages-were-found-that-matched-the-keywords-x_pa-custom=Es wurden keine BeitrÃ¤ge zu den folgenden SchlÃ¼sselwÃ¶rtern gefunden: {0}.
+no-user-was-found-with-your-facebook-credentials.-would-you-like-to-import-this-user_pa-custom=Es wurde kein BÃ¼rger mit diesen Facbook Zugangsdaten gefunden. Soll dieser BÃ¼rger jetzt lokal angelegt werden?
+no-users-were-found_pa-custom=Es wurden keine BÃ¼rger gefunden.
+notify-new-users_pa-custom=Neu hinzugekommene BÃ¼rger benachrichtigen
+num-of-categories_pa-custom=Anzahl der Teilprojekte
+num-of-threads_pa-custom=Anzahl der Themen
+num-of-users_pa-custom=Anzahl von BÃ¼rgern
+optional_pa-custom=Optional
+other-members_pa-custom=Andere BÃ¼rger
+overline_pa-custom=Overline
+pass_pa-custom=Pass
+permissions-assigned-to-users_pa-custom=BÃ¼rgern zugewiesene Rechte
+person_pa-custom=Person
+play-a-sound-when-i-receive-a-new-message-in-a-hidden-window_pa-custom=Bei Empfangen eines neuen Beitrags in einem versteckten Fenster wird ein Ton abgespielt.
+please-enter-a-valid-message_pa-custom=Bitte geben Sie einen gÃ¼ltigen Beitrag ein.
+please-limit-your-message-to-500-characters_pa-custom=Begrenzen Sie bitte Ihren Beitrag auf 500 Buchstaben.
+port_pa-custom=Port
+portlet-name_pa-custom=Portlet Name
+post_pa-custom=verÃ¶ffentlichen
+post-new-message_pa-custom=Neuen Beitrag verÃ¶ffentlichen
+post-new-thread_pa-custom=Neues Thema verÃ¶ffentlichen
+post-reply_pa-custom=Antwort verÃ¶ffentlichen
+posted-by_pa-custom=verÃ¶ffentlicht von
+posted-on-x_pa-custom=VerÃ¶ffentlicht am {0}.
+posted-on-x-in-reply-to-x_pa-custom=VerÃ¶ffentlicht am {0} als Antwort auf {1}.
+posts_pa-custom=Beitrag
+previous-message_pa-custom=Vorheriger Beitrag
+previous-thread_pa-custom=Vorheriges Thema
+region_pa-custom=Region
+remote-host-ip_pa-custom=Remote Host/IP
+remote-port_pa-custom=Remote Port
+remote-portlet_pa-custom=Remote Portlet
+revision_pa-custom=Revision
+ridge_pa-custom=Ridge
+rss-subscription_pa-custom=RSS Abonnement
+search-categories_pa-custom=Teilprojekte durchsuchen
+search-messages_pa-custom=BeitrÃ¤ge durchsuchen
+search-threads_pa-custom=Thema durchsuchen
+select-categories_pa-custom=WÃ¤hlen Sie Teilprojekte
+select-user_pa-custom=BÃ¼rger auswÃ¤hlen
+select-users-to-associate-with-the-action-x_pa-custom=WÃ¤hlen Sie den BÃ¼rger, der mit der Aktion {0} assoziiert werden soll.
+select-users-to-associate-with-the-following-actions-x_pa-custom=WÃ¤hlen Sie die BÃ¼rger, die mit der folgenden Aktion assoziiert werden sollen: {0}
+selected-user_pa-custom=BÃ¼rger auswÃ¤hlen
+send-approval-denied-email-to-users_pa-custom="Nicht genehmigt" E-Mail an BÃ¼rger verschicken?
+send-approval-granted-email-to-users_pa-custom="Genehmigt E-Mail" an BÃ¼rger verschicken?
+send-approval-requested-email-to-users_pa-custom=Genehmigungsanfrage an BÃ¼rger verschicken?
+send-email-notification-to-new-users_pa-custom=E-Mail Benachrichtigung an neu hinzugekommene BÃ¼rger verschicken?
+send-order-email-to-users_pa-custom=AuftragsbestÃ¤tigung als E-Mail an BÃ¼rger verschicken?
+send-shipping-email-to-users_pa-custom=Versand E-Mail an BÃ¼rger verschicken?
+send-text-message_pa-custom=Text-Beitrag verschicken
+sending-message_pa-custom=Beitrag wird gesendetâ¦
+show-all-categories_pa-custom=Zeigen Sie alle Teilprojekte
+split-thread_pa-custom=Thema teilen
+stage_pa-custom=Stage
+stages_pa-custom=Stages
+subcategories_pa-custom=Themenbereiche
+subject-of-the-new-thread_pa-custom=Betreff/Titel eines neuen Themas
+tag_pa-custom=Tag
+tags_pa-custom=Tags
+test_pa-custom=Test
+text_pa-custom=Text
+the-category-in-which-the-message-has-been-posted_pa-custom=Der Themenbereich, in dem der Beitrag verÃ¶ffentlicht worden ist
+the-email-address-of-the-user-who-added-the-blog-entry_pa-custom=Die E-Mail Adresse des BÃ¼rgers, der diesen Blogeintrag hinzugefÃ¼gt hat
+the-email-address-of-the-user-who-added-the-message_pa-custom=Die E-Mail Adresse des BÃ¼rgers, der den Beitrag hinzugefÃ¼gt hat
+the-email-address-of-the-user-who-added-the-page_pa-custom=Die E-Mail Adresse des BÃ¼rgers, der die Seite hinzugefÃ¼gt hat
+the-email-address-of-the-user-who-updated-the-blog-entry_pa-custom=Die E-Mail Adresse des BÃ¼rgers, der diesen Blogeintrag aktualisiert hat
+the-following-post-will-be-added-in-place-of-the-moved-message_pa-custom=Folgende Beitrag wird anstatt des verschobenen Beitrags hinzugefÃ¼gt
+the-message-body_pa-custom=Der Beitragstext
+the-message-could-not-be-found_pa-custom=Der Beitrag konnte nicht gefunden werden.
+the-message-id_pa-custom=Die Beitrags-ID
+the-message-object-has-expired-and-is-no-longer-available_pa-custom=Das Beitragsobjekt ist abgelaufen und nicht mehr verfÃ¼gbar. Bitte {0} Sie Ihre Zusammenstellung.
+the-message-subject_pa-custom=Der Betreff des Beitrags
+the-new-thread-can-be-found-at-x_pa-custom=Das neue Thema ist unter {0} zu finden.
+the-selected-organization-is-associated-with-deactivated-users.-do-you-want-to-proceed-with-deleting-the-selected-organization-by-automatically-unassociating-the-deactivated-users_pa-custom=Die ausgewÃ¤hlte Organisation ist mit deaktivierten BÃ¼rgern verknÃ¼pft. MÃ¶chten Sie mit dem LÃ¶schen der Organisation fortfahren, indem die VerknÃ¼pfung zu den deaktivierten BÃ¼rgern automatisch aufgehoben wird?
+the-user-could-not-be-found_pa-custom=Der BÃ¼rger konnte nicht gefunden werden.
+the-user-does-not-have-any-additional-email-addresses_pa-custom=Der BÃ¼rger hat keine weitern E-Mail Adressen.
+the-user-does-not-have-any-addresses_pa-custom=Der BÃ¼rger hat keine Adressen.
+the-user-does-not-have-any-organization-roles_pa-custom=Der BÃ¼rger hat keine Organisations-Rollen.
+the-user-does-not-have-any-phone-numbers_pa-custom=Der BÃ¼rger hat keine Telefonnummern.
+the-user-does-not-have-any-regular-roles_pa-custom=Der BÃ¼rger hat keine regulÃ¤ren Rollen.
+the-user-does-not-have-any-websites_pa-custom=Der BÃ¼rger hat keine Webseite.
+the-user-must-have-at-least-one-regular-organization-to-be-able-to-select-an-associated-location_pa-custom=Dem BÃ¼rger muÃ mindestens eine regulÃ¤re Organisation zugeordnet sein, damit ein Standort ausgewÃ¤hlt werden kann.
+the-user-who-added-the-blog-entry_pa-custom=Der BÃ¼rger, der diesen Blogeintrag hinzufÃ¼gte
+the-user-who-added-the-message_pa-custom=Der BÃ¼rger, der den Beitrag hinzufÃ¼gte
+the-user-who-added-the-page_pa-custom=Der BÃ¼rger, der die Seite hinzufÃ¼gte
+the-user-who-updated-the-blog-entry_pa-custom=Der BÃ¼rger, der diesen Blogeintragung aktualisierte
+the-users-with-the-following-roles-can-access-this-portlet-in-the-control-panel_pa-custom=Die BÃ¼rger mit den folgenden Rollen kÃ¶nnen auf dieses Portlet im Kontrollbereich zurÃ¼ckgreifen:
+the-users-with-the-following-roles-can-add-this-portlet-to-the-pages-they-manage_pa-custom=Die BÃ¼rger mit den folgenden Rollen kÃ¶nnen dieses Portlet zu den von ihnen verwalteten Seiten hinzufÃ¼gen
+there-are-currently-x-users-in-x-rooms_pa-custom=Es befinden sich momentan {0} BÃ¼rger in {1} Chatrooms.
+there-are-no-banned-users_pa-custom=Es gibt keine gebannten BÃ¼rger.
+there-are-no-categories_pa-custom=Keine Teilprojekte vorhanden.
+there-are-no-threads-in-this-category_pa-custom=Es gibt keine Themen in diesem Themenbereich.
+there-are-no-users-to-invite_pa-custom=Es gibt keine einzuladenden BÃ¼rger.
+this-page-cannot-be-edited-because-user-x-is-modifying-it-and-the-results-have-not-been-published-yet_pa-custom=Diese Seite kann nicht bearbeitet werden, da der BÃ¼rger <i>{0}</i> diese bereits bearbeitet und sein Ergebnis noch nicht verÃ¶ffentlicht hat. Die letzte Ãnderung wurd am {1} gemacht.
+this-section-will-be-editable-after-creating-the-user_pa-custom=Dieser Abschnitt wird nach Anlegen des BÃ¼rgers editierbar sein.
+this-site-has-no-members_pa-custom=Diese Site hat keine BÃ¼rger.
+this-user-does-not-have-any-private-pages_pa-custom=Dieser BÃ¼rger hat keine privaten Seiten.
+this-user-does-not-have-any-public-pages_pa-custom=Dieser BÃ¼rger hat keine Ã¶ffentlichen Seiten.
+thread_pa-custom=Thema
+thread-is-locked_pa-custom=Dieses Thema ist gesperrt
+thread-locked_pa-custom=Thema gesperrt
+thread-posts_pa-custom=BeitrÃ¤ge zum Thema
+thread-priorities_pa-custom=Themen-PrioritÃ¤ten
+thread-views_pa-custom=Thema Ansichten
+threaded-replies_pa-custom=Antworten im Thema
+threads_pa-custom=Themen
+to-add,-click-members-on-the-left_pa-custom=Um hinzuzufÃ¼gen, bitte auf BÃ¼rger (links) klicken.
+unban-this-user_pa-custom=Verbannung des BÃ¼rgers aufheben
+unlock-thread_pa-custom=Thema entsperren
+unlock-thread-to-add-an-explanation-post_pa-custom=Thema freischalten um einen erklÃ¤renden Beitrag hinzuzufÃ¼gen.
+unread-messages_pa-custom=Ungelesene BeitrÃ¤ge anzeigen
+update-categories_pa-custom=Teilprojekte aktualisieren
+update-category_pa-custom=Themenbereich aktualisieren
+update-message_pa-custom=Beitrag bearbeiten
+url-information_pa-custom=URL Information
+user-added-email_pa-custom="Neuer BÃ¼rger" E-Mail
+user-bans_pa-custom=BÃ¼rger-Sperren
+user-information_pa-custom=Informationen Ã¼ber BÃ¼rger
+user-name-and-image_pa-custom=Name und -bild
+users_pa-custom=BÃ¼rger
+users-who-belongs-to-this-user-group-will-have-these-pages-copied-to-their-user-pages-when-the-user-is-first-associated-with-the-user-group_pa-custom=BÃ¼rger, die dieser Benutzergruppe angehÃ¶ren, bekommen diese Seiten ihren Benutzerseiten hinzugefÃ¼gt, wenn der Benutzer erstmals mit der Benutzergruppe verknÃ¼pft wird.
+view-message_pa-custom=Beitrag ansehen
+view-thread_pa-custom=Thema ansehen
+view-user-profile_pa-custom=BÃ¼rgerprofil ansehen
+view-user-profile_pa-custom=BÃ¼rgerprofil ansehen
+view-users_pa-custom=BÃ¼rger ansehen
+web-content_pa-custom=Web Content
+web-content-id_pa-custom=Web Content ID
+where-are-the-x-members_pa-custom=Wo sind die {0} BÃ¼rger?
+workflow_pa-custom=Workflow
+x-forum-posts_pa-custom={0} Forum Posts
+x-users-were-successfully-notified_pa-custom={0} BÃ¼rger wurden erfolgreich benachrichtet.
+yard_pa-custom=Yard
+you-are-not-subscribed-to-any-categories_pa-custom=Sie haben keine Teilprojekte abonniert.
+you-are-not-subscribed-to-any-threads_pa-custom=Sie haben kein Thema abonniert.
+you-can-now-check-for-new-messages-in-your-x_pa-custom=Sie kÃ¶nnen jetzt nach neuen BeitrÃ¤gen in Ihrer {0} schauen.
+you-cannot-delete-a-root-message-that-has-more-than-one-immediate-reply_pa-custom=Sie kÃ¶nnen keinen ersten Beitrag lÃ¶schen, der mehr als eine direkte Antwort hat.
+you-did-not-select-any-messages_pa-custom=Sie haben keine BeitrÃ¤ge ausgewÃ¤hlt. Setzen Sie das HÃ¤kchen neben einem Beitrag, den Sie  auswÃ¤hlen wollen.
+your-message-was-discarded_pa-custom=Ihr Beitrag wurde verworfen.
+your-message-was-sent_pa-custom=Ihr Beitrag wurde gesendet.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

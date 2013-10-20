@@ -95,7 +95,7 @@ request.setAttribute("view.jsp-portletURL", portletURL);
 						<portlet:param name="parentCategoryId" value="<%= String.valueOf(categoryId) %>" />
 					</portlet:renderURL>
 
-					<aui:button href='<%= editCategoryURL %>' value='<%= (category == null) ? "add-category" : "add-subcategory" %>' />
+					<aui:button href='<%= editCategoryURL %>' value='<%= (category == null) ? "add-category_pa-custom" : "add-subcategory_pa-custom" %>' />
 				</c:if>
 
 				<c:if test="<%= showAddMessageButton %>">
@@ -105,7 +105,7 @@ request.setAttribute("view.jsp-portletURL", portletURL);
 						<portlet:param name="mbCategoryId" value="<%= String.valueOf(categoryId) %>" />
 					</portlet:renderURL>
 
-					<aui:button href='<%= editMessageURL %>' value="post-new-thread" />
+					<aui:button href='<%= editMessageURL %>' value="post-new-thread_pa-custom" />
 				</c:if>
 
 				<c:if test="<%= showPermissionsButton %>">
@@ -191,7 +191,7 @@ request.setAttribute("view.jsp-portletURL", portletURL);
 
 		<c:if test='<%= topLink.equals("recent-posts") && (groupThreadsUserId > 0) %>'>
 			<div class="portlet-msg-info">
-				<liferay-ui:message key="filter-by-user" />: <%= HtmlUtil.escape(PortalUtil.getUserName(groupThreadsUserId, StringPool.BLANK)) %>
+				<liferay-ui:message key="filter-by-user_pa-custom" />: <%= HtmlUtil.escape(PortalUtil.getUserName(groupThreadsUserId, StringPool.BLANK)) %>
 			</div>
 		</c:if>
 
@@ -200,7 +200,7 @@ request.setAttribute("view.jsp-portletURL", portletURL);
 				curParam="cur1"
 				deltaConfigurable="<%= false %>"
 				emptyResultsMessage="you-are-not-subscribed-to-any-categories"
-				headerNames="category,categories,threads,posts"
+				headerNames="category_pa-custom,categories_pa-custom,threads_pa-custom,posts_pa-custom"
 				iteratorURL="<%= portletURL %>"
 			>
 				<liferay-ui:search-container-results
@@ -230,7 +230,7 @@ request.setAttribute("view.jsp-portletURL", portletURL);
 		</c:if>
 
 		<liferay-ui:search-container
-			headerNames="thread,started-by,posts,views,last-post"
+			headerNames="thread_pa-custom,started-by,posts_pa-custom,views,last-post"
 			iteratorURL="<%= portletURL %>"
 		>
 
@@ -241,7 +241,7 @@ request.setAttribute("view.jsp-portletURL", portletURL);
 				emptyResultsMessage = "you-do-not-have-any-posts";
 			}
 			else if (topLink.equals("my-subscriptions")) {
-				emptyResultsMessage = "you-are-not-subscribed-to-any-threads";
+				emptyResultsMessage = "you-are-not-subscribed-to-any-threads_pa-custom";
 			}
 			else if (topLink.equals("recent-posts")) {
 				emptyResultsMessage = "there-are-no-recent-posts";
@@ -355,7 +355,7 @@ request.setAttribute("view.jsp-portletURL", portletURL);
 			<liferay-ui:panel collapsible="<%= true %>" cssClass="statistics-panel-content" extended="<%= true %>" id="messageBoardsGeneralStatisticsPanel" persistState="<%= true %>" title="general">
 				<dl>
 					<dt>
-						<liferay-ui:message key="num-of-categories" />:
+						<liferay-ui:message key="num-of-categories_pa-custom" />:
 					</dt>
 					<dd>
 						<%= numberFormat.format(categoryDisplay.getAllCategoriesCount()) %>
@@ -406,10 +406,10 @@ request.setAttribute("view.jsp-portletURL", portletURL);
 		%>
 
 	</c:when>
-	<c:when test='<%= topLink.equals("banned-users") %>'>
+	<c:when test='<%= topLink.equals("banned-users_pa-custom") %>'>
 		<liferay-ui:search-container
-			emptyResultsMessage="there-are-no-banned-users"
-			headerNames="banned-user,banned-by,ban-date"
+			emptyResultsMessage="there-are-no-banned-users_pa-custom"
+			headerNames="banned-user_pa-custom,banned-by,ban-date"
 			iteratorURL="<%= portletURL %>"
 		>
 			<liferay-ui:search-container-results
@@ -423,7 +423,7 @@ request.setAttribute("view.jsp-portletURL", portletURL);
 				modelVar="ban"
 			>
 				<liferay-ui:search-container-column-text
-					name="banned-user"
+					name="banned-user_pa-custom"
 					value="<%= HtmlUtil.escape(PortalUtil.getUserName(ban.getBanUserId(), StringPool.BLANK)) %>"
 				/>
 

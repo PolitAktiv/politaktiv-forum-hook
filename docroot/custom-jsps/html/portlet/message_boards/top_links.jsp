@@ -109,13 +109,13 @@ portletURL.setParameter("struts_action", "/message_boards/view");
 			<c:if test="<%= MBPermission.contains(permissionChecker, scopeGroupId, ActionKeys.BAN_USER) %>">
 
 				<%
-				portletURL.setParameter("topLink", "banned-users");
+				portletURL.setParameter("topLink", "banned-users_pa-custom");
 				%>
 
 				<liferay-ui:icon
 					cssClass="top-link last"
 					image="../aui/alert" label="<%= true %>"
-					message="banned-users"
+					message="banned-users_pa-custom"
 					url='<%= topLink.equals("banned-users") ? StringPool.BLANK : portletURL.toString() %>'
 				/>
 			</c:if>
@@ -134,7 +134,7 @@ portletURL.setParameter("struts_action", "/message_boards/view");
 					<aui:input name="searchCategoryId" type="hidden" value="<%= categoryId %>" />
 
 					<span class="aui-search-bar">
-						<aui:input id="keywords1" inlineField="<%= true %>" label="" name="keywords" size="30" title="search-messages" type="text" />
+						<aui:input id="keywords1" inlineField="<%= true %>" label="" name="keywords" size="30" title="search-messages_pa-custom" type="text" />
 
 						<aui:button type="submit" value="search" />
 					</span>

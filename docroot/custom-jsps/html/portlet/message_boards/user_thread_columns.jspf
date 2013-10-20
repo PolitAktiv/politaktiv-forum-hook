@@ -17,7 +17,7 @@
 <liferay-ui:search-container-column-text
 	buffer="buffer"
 	href="<%= rowURL %>"
-	name="thread"
+	name="thread_pa-custom"
 >
 
 	<%
@@ -46,7 +46,7 @@
 
 <liferay-ui:search-container-column-text
 	href="<%= rowURL %>"
-	name="posts"
+	name="posts_pa-custom"
 	value="<%= String.valueOf(thread.getMessageCount()) %>"
 />
 <!-- Politaktiv change: remove view numbers column from user thread view -->

@@ -16,7 +16,7 @@
 
 <liferay-ui:search-container-column-text
 	buffer="buffer"
-	name="category"
+	name="category_pa-custom"
 >
 
 	<%
@@ -79,7 +79,7 @@
 <c:if test="<%= bShowCatCountInCatList %>">
 	<liferay-ui:search-container-column-text
 		href="<%= rowURL %>"
-		name="categories"
+		name="categories_pa-custom"
 		value="<%= String.valueOf(categoryDisplay.getSubcategoriesCount(curCategory)) %>"
 	/>
 </c:if>
@@ -87,14 +87,14 @@
 <c:if test="<%= bShowThreadCountInCatList %>">
 	<liferay-ui:search-container-column-text
 		href="<%= rowURL %>"
-		name="threads"
+		name="threads_pa-custom"
 		value="<%= String.valueOf(categoryDisplay.getSubcategoriesThreadsCount(curCategory)) %>"
 	/>
 </c:if>
 
 <liferay-ui:search-container-column-text
 	href="<%= rowURL %>"
-	name="posts"
+	name="posts_pa-custom"
 	value="<%= String.valueOf(categoryDisplay.getSubcategoriesMessagesCount(curCategory)) %>"
 />
 
