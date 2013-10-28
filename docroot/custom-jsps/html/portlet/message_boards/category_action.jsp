@@ -54,8 +54,6 @@ Set<Long> categorySubscriptionClassPKs = (Set<Long>)row.getParameter("categorySu
 
 	<c:if test="<%= portletName.equals(PortletKeys.MESSAGE_BOARDS) %>">
 
-	<%-- I'm not sure, if this is the right place for this if-condition.
-	The correct place may also be before the test=portletName.equals(PortletKeys....) --%>
 		<c:if test="<%= rssThreadActionEnabled %>">
 
 			<%

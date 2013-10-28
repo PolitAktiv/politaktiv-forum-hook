@@ -3,5 +3,6 @@
 
 <hook>
 	<language-properties>content/Language-ext_de.properties</language-properties>
+    <language-properties>content/Language-ext_en.properties</language-properties>
 	<custom-jsp-dir>/custom-jsps</custom-jsp-dir>
 </hook>
