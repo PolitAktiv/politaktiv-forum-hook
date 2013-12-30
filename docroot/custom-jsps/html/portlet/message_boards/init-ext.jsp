@@ -14,23 +14,34 @@
  */
  --%>
 
+
 <%
-boolean rssGlobalActionEnabled 			= true;
-boolean rssThreadActionEnabled 		 	= false;
+/* Note: Under Liferay 6.1, we had two additional variables here:
+    boolean rssGlobalActionEnabled 			= true;
+	boolean rssThreadActionEnabled 		 	= false;
+	Liferay now implements this by its own, variable is called "enableRSS", see also init.jsp
+*/
 
-boolean bShowThreadNumberCol 			= false;
-boolean bShowThreadViewsCol  			= false;
-
-boolean bShowSubscriptions 	 			= false;
-boolean bShowStatistics 		 		= false;
-
-boolean bUserDisplayShowRank 			= false;
-boolean bUserDisplayShowJoinDate 		= false;
 
 boolean bShowCatCountInCatList    		= false;
 boolean bShowThreadCountInCatList 		= false;
 
 boolean bShowEditMsgPermSection			= false;
 
-showSearch 					= false;
-%>
+// variables do not fit in 6.2 any more (changed logic)
+
+boolean bShowSubscriptions 	 			= false;
+boolean bShowStatistics 		 		= false;
+
+boolean bShowThreadNumberCol 			= false;
+boolean bShowThreadViewsCol  			= false;
+
+
+
+// not even used any more 
+boolean bUserDisplayShowRank 			= false;
+boolean bUserDisplayShowJoinDate 		= false;
+
+
+
+--%>
