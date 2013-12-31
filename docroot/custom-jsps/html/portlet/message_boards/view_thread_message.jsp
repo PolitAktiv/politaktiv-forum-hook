@@ -1,5 +1,19 @@
 <%--
 /**
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *        http://www.apache.org/licenses/LICENSE-2.0
+ *        
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ --%><%--
+/**
  * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
  *
  * This library is free software; you can redistribute it and/or modify it under
@@ -101,7 +115,7 @@ MBThread thread = (MBThread)request.getAttribute("edit_message.jsp-thread");
 									<liferay-ui:icon
 										image="../message_boards/unban_user"
 										label="<%= true %>"
-										message="unban-this-user"
+										message="unban-this-user_pa-custom"
 										url="<%= unbanUserURL.toString() %>"
 									/>
 								</c:when>
@@ -116,7 +130,7 @@ MBThread thread = (MBThread)request.getAttribute("edit_message.jsp-thread");
 									<liferay-ui:icon
 										image="../message_boards/ban_user"
 										label="<%= true %>"
-										message="ban-this-user"
+										message="ban-this-user_pa-custom"
 										url="<%= banUserURL.toString() %>"
 									/>
 								</c:otherwise>
@@ -493,7 +507,7 @@ MBThread thread = (MBThread)request.getAttribute("edit_message.jsp-thread");
 							<liferay-ui:icon
 								image="unlink"
 								label="<%= true %>"
-								message="split-thread"
+								message="split-thread_pa-custom"
 								url="<%= splitThreadURL %>"
 							/>
 						</li>

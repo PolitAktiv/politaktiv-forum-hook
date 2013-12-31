@@ -26,16 +26,16 @@
 boolean bShowCatCountInCatList    		= false;
 boolean bShowThreadCountInCatList 		= false;
 
-boolean bShowEditMsgPermSection			= false;
-
-// variables do not fit in 6.2 any more (changed logic)
-
-boolean bShowSubscriptions 	 			= false;
 boolean bShowStatistics 		 		= false;
+
+boolean bShowEditMsgPermSection			= false;
+boolean bShowSubscriptions 	 			= false; // may be deprecated
+
+
+// variables seem to be deprecated in 6.2 
 
 boolean bShowThreadNumberCol 			= false;
 boolean bShowThreadViewsCol  			= false;
-
 
 
 // not even used any more 
