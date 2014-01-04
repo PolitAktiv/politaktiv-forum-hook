@@ -59,7 +59,7 @@ request.setAttribute("view.jsp-viewCategory", Boolean.TRUE.toString());
 request.setAttribute("view.jsp-portletURL", portletURL);
 %>
 
-<liferay-ui:trash-undo />
+<liferay-ui:trash-undo portletURL="<%= portletURL %>" />
 
 <liferay-util:include page="/html/portlet/message_boards/top_links.jsp" />
 
